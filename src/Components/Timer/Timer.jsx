@@ -42,7 +42,7 @@ export default function Timer() {
       ...values,
       submitted: true,
       minutes: Math.floor(timePerPerson),
-      seconds: 60 * (timePerPerson - values.minutes),
+      seconds: Math.floor(60 * (timePerPerson % 1)),
       currentCountdown: timePerPerson,
     });
   };
@@ -141,6 +141,7 @@ export default function Timer() {
               <p>not yet submitted</p>
             )}
           </Grid>
+          <a href="http://slaauk.org/donate">Donate to SLAA</a>
         </Grid>
       </div>
     </div>
